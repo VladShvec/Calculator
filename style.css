@@ -1,0 +1,11 @@
+.leftBlock{
+    display: inline-block;
+    
+}
+.todoBlock{
+    display: inline-block;
+        
+}
+.rightBlock{
+    display: inline-block;
+}
