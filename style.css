@@ -9,3 +9,20 @@
 .rightBlock{
     display: inline-block;
 }
+.root{
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 389px;
+    margin: 0 auto;
+    
+}
+input{
+    display: block;
+    height: 41px;
+    font-size: 20px;
+}
+button{
+display: inline-block;
+font-size: 20px;
+}

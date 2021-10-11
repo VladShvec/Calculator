@@ -26,19 +26,30 @@ const ResultButton = (input) =>{
     inputArray[0] = parseFloat(inputArray[0]);
     inputArray[2] = parseFloat(inputArray[2]);
 //    if(inputArray[1] == '+'){
+     
+
     inputArray = inputArray.map(function(smb, key) {
+        let res;    
         if (smb == '/' ){ 
             let before = inputArray[key - 1];
             let after = inputArray[key + 1];
-            let res = before / after;
-        };
+             res = before / after;
+              
                
-        return smb;
-//        input.value = inputArray[0] + inputArray[2];        
-      });
-        
+        }; 
+//        res = smb; 
+        console.log(res)
+          return smb; 
+              
+      });    
+    
       
-          
+        
+    
+//      console.log(inputArray); 
+    if(input.value.includes('+')){ 
+           
+         input.value = inputArray[0] + inputArray[2];        
      }else if(inputArray[1] == '-'){
          input.value = inputArray[0] - inputArray[2];
          
