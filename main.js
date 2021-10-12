@@ -18,55 +18,17 @@ const ResultButton = (input) =>{
     let resultButton = document.createElement('button');
     resultButton.appendChild(document.createTextNode('='));
     resultButton.addEventListener('click', function(){
-//        if(input.value.includes('+')){
-//            
-//        }
+
     let inputArray = input.value.split(" ");
      
     inputArray[0] = parseFloat(inputArray[0]);
     inputArray[2] = parseFloat(inputArray[2]);
-//    if(inputArray[1] == '+'){
-     
 
-//    inputArray = inputArray.map(function(smb, key) {
-//              if(inputArray[smb] == '*'){
-//                    let before1 = inputArray[smb - 1];
-//                    let after1 = inputArray[smb + 1];
-//                    let result1 = before1 * after1;
-//                 console.log (result1)
-//                if(input.value.includes('+')){ 
-//           
-//                    input.value = inputArray[0] + result1;        
-//                }else if(inputArray[1] == '-'){
-//                    input.value = inputArray[0] - result1;
-//         
-//                }else if(inputArray[1] == '*'){
-//                    input.value = inputArray[0] * result1;
-//         
-//                }else if(inputArray[1] == '/'){
-//                    input.value = inputArray[0] / result1;
-//         
-//                }   
-//                }
-//        
-//        
-////        if (smb == '/' ){ 
-////            let before = inputArray[key - 1];
-////            let after = inputArray[key + 1];
-////             res = before / after;
-//////              console.log(res);
-////               let newInputArray = inputArray.splice(3 , 1 );  
-////            console.log(newInputArray);
-////        }; 
-////        res = smb; 
-//            
-//          return smb; 
-//              
-//      });    
-////      console.log(newinputArray)    
     
         
         console.log(inputArray)
+        
+        
         for (let k=0; k < inputArray.length; k++){
             if(inputArray[k] == '*'){
                     let before1 = inputArray[k - 1];
@@ -79,7 +41,7 @@ const ResultButton = (input) =>{
                     console.log(inputArray[k])
                     if(inputArray[k + 1] == '+'){ 
                     
-                    input.value = result1 + inputArray[k + 1];        
+                    input.value = result1 + +inputArray[k + 1];        
                     }
                     else if(inputArray[3] == '-'){
                     input.value = result1 - inputArray[k + 1];
@@ -167,8 +129,7 @@ const ResultButton = (input) =>{
          
      }        
   
-//    console.log(input.value);    
-//    console.log(typeof Number(inputArray));    
+
     });
     
     return resultButton;
