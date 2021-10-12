@@ -22,30 +22,136 @@ const ResultButton = (input) =>{
 //            
 //        }
     let inputArray = input.value.split(" ");
-        
+     
     inputArray[0] = parseFloat(inputArray[0]);
     inputArray[2] = parseFloat(inputArray[2]);
 //    if(inputArray[1] == '+'){
      
 
-    inputArray = inputArray.map(function(smb, key) {
-        let res;    
-        if (smb == '/' ){ 
-            let before = inputArray[key - 1];
-            let after = inputArray[key + 1];
-             res = before / after;
-              
-               
-        }; 
-//        res = smb; 
-        console.log(res)
-          return smb; 
-              
-      });    
+//    inputArray = inputArray.map(function(smb, key) {
+//              if(inputArray[smb] == '*'){
+//                    let before1 = inputArray[smb - 1];
+//                    let after1 = inputArray[smb + 1];
+//                    let result1 = before1 * after1;
+//                 console.log (result1)
+//                if(input.value.includes('+')){ 
+//           
+//                    input.value = inputArray[0] + result1;        
+//                }else if(inputArray[1] == '-'){
+//                    input.value = inputArray[0] - result1;
+//         
+//                }else if(inputArray[1] == '*'){
+//                    input.value = inputArray[0] * result1;
+//         
+//                }else if(inputArray[1] == '/'){
+//                    input.value = inputArray[0] / result1;
+//         
+//                }   
+//                }
+//        
+//        
+////        if (smb == '/' ){ 
+////            let before = inputArray[key - 1];
+////            let after = inputArray[key + 1];
+////             res = before / after;
+//////              console.log(res);
+////               let newInputArray = inputArray.splice(3 , 1 );  
+////            console.log(newInputArray);
+////        }; 
+////        res = smb; 
+//            
+//          return smb; 
+//              
+//      });    
+////      console.log(newinputArray)    
     
-      
         
-    
+        console.log(inputArray)
+        for (let k=0; k < inputArray.length; k++){
+            if(inputArray[k] == '*'){
+                    let before1 = inputArray[k - 1];
+                    let after1 = inputArray[k + 1];
+                    let result1 = before1 * after1;
+                    console.log(result1)
+            //Чтоб не забыть это просто эксперимент
+                if((inputArray[k - 1] * inputArray[k + 1]) == result1){
+                    inputArray[k] = result1;
+                    console.log(inputArray[k])
+                    if(inputArray[k + 1] == '+'){ 
+                    
+                    input.value = result1 + inputArray[k + 1];        
+                    }
+                    else if(inputArray[3] == '-'){
+                    input.value = result1 - inputArray[k + 1];
+         
+                    }else if(inputArray[1] == '*' || inputArray[3] == '*'){
+                    input.value = result1 * inputArray[k + 1];
+                    }else if(inputArray[3] == '/'){
+                    input.value = result1 / inputArray[k + 1];
+                    }
+                    
+         
+                    
+                    }
+                    if(input.value.includes('+')){ 
+                    
+                    input.value = inputArray[0] + result1;        
+                    }else if(inputArray[1] == '-'){
+                    input.value = inputArray[0] - result1;
+         
+                    }else if(inputArray[1] == '*'){
+                    input.value = inputArray[0] * result1;
+         
+                    }else if(inputArray[1] == '/'){
+                    input.value = inputArray[0] / result1;
+         
+                    }   
+                    }
+        }
+            
+//        !!!!!!!!!!!!!!!!!!!!!!!!!!!
+            for (let i = 0; i < inputArray.length; i++) {
+         if(inputArray[i] == '/'){
+            let before = inputArray[i - 1];
+            let after = inputArray[i + 1];
+            let result = before / after;
+                 console.log (result)
+                 if((inputArray[i - 1] / inputArray[i + 1]) == result){
+                    inputArray[i] = result;
+                    console.log(result)
+                    if(inputArray[3] == '+'){ 
+                    
+                    input.value = result + +inputArray[4];         
+                    }
+                    else if(inputArray[3] == '-'){
+                    input.value = result - inputArray[4];
+         
+                    }else if(inputArray[1] == '*' || inputArray[3] == '*'){
+                    input.value = result * inputArray[4];
+                    }else if(inputArray[3] == '/'){
+                    input.value = result / inputArray[4];
+                    }
+                    
+         
+                    
+                    } 
+             
+                if(input.value.includes('+')){ 
+           
+                    input.value = inputArray[0] + result;        
+                }else if(inputArray[1] == '-'){
+                    input.value = inputArray[0] - result;
+         
+                }else if(inputArray[1] == '*'){
+                    input.value = inputArray[0] * result;
+         
+                }else if(inputArray[1] == '/'){
+                    input.value = inputArray[0] / result;
+         
+                }   
+                } 
+                } 
+        
 //      console.log(inputArray); 
     if(input.value.includes('+')){ 
            
